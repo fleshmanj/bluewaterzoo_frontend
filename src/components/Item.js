@@ -2,10 +2,11 @@
 const Item = ({ item }) => {
     console.log(item)
     return (
-        <div className={"pet"} key={item._id}>
+        <div className={"card"} key={item._id}>
+            <img src={item.image} alt={item.name} />
             <h2>{item.name}</h2>
             <p>{item.description}</p>
-            <p>{item.price}</p>
+            <p className="price">${item.price}.00</p>
         </div>
     )
 }

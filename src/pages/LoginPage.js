@@ -29,6 +29,7 @@ const LoginPage = () => {
             const data = await response.json();
             console.log('Login Successful:', data);
             dispatch({type: 'LOGIN', payload: data.token});
+            dispatch({type: 'SET_USER_ROLE', payload: username});
 
             // Redirect to the homepage on successful login
             navigate('/');

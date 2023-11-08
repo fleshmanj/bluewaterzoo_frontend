@@ -1,10 +1,15 @@
-import React, { useContext } from 'react';
-import { Link, useLocation } from "react-router-dom";
-import { UserContext } from "../context/UserContext";
+import React from 'react';
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useUserContext } from "../hooks/useUserContext";
+
+
 
 const Navbar = () => {
     const location = useLocation();
-    const { token, dispatch } = useContext(UserContext); // Destructure token from your context
+    const { token, role, dispatch } = useUserContext(); // Destructure token from your context
+    const navigate = useNavigate();
+
+    console.log("Navbar user: ", role);
 
 
     return (
@@ -25,6 +30,16 @@ const Navbar = () => {
                             className="button"
                         >
                             Logout
+                        </button>
+                    )}
+                    {role === "admin" && (
+                        // If the user is an admin, show the Admin Console button
+                        <button
+                            // onClick redirect to the admin console
+                            onClick={() => navigate("/admin-console")}
+                            className="button"
+                        >
+                            Admin Console
                         </button>
                     )}
                 </div>

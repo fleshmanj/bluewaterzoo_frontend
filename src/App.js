@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import BrowsePage from "./pages/BrowsePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import AdminConsolePage from "./pages/AdminConsolePage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/reptile" element={<BrowsePage category={"Reptile"} />} />
             <Route path="/login" element={<LoginPage/>} />
             <Route path="/register" element={<RegisterPage/>} />
+            <Route path="/admin-console" element={<AdminConsolePage/>} />
             <Route path="/about" element={<h1>About</h1>} />
           </Routes>
         </div>

@@ -20,6 +20,12 @@ const userReducer = (state, action) => {
                 ...state,
                 pets: action.payload,
             };
+        case 'SET_USER':
+            console.log("Setting user");
+            return {
+                ...state,
+                user: action.payload,
+            };
         default:
             return state;
     }
